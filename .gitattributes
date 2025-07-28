@@ -1,0 +1,35 @@
+* text=auto
+
+*.sh text eol=lf
+*.sql text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+*.css text eol=lf
+*.rst text eol=lf
+*.csv text eol=lf
+*.tsv text eol=lf
+*.log text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.env* text eol=lf
+*.git* text eol=lf
+
+# Declare files that are binary so that their eol should not be modified.
+# Git, with the first line of this file, will probably not modify binary
+# files, but add the following just to be safe and explicit.
+*.png binary
+*.jpg binary
+*.svg binary
+*.pdf binary

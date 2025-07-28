@@ -1,0 +1,10 @@
+fastapi[standard]
+langchain
+langchain_openai
+langgraph
+openai
+pydantic
+streamlit
+typing_extensions
+websocket-client
+websockets

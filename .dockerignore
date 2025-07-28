@@ -1,0 +1,25 @@
+tests/
+.env
+.env-base
+.env-example
+.env-alpha
+.env-beta
+.env-local
+.env-prod
+notebooks
+IRC Bot
+init-db
+docs
+.git/
+.github
+.gitignore
+.idea
+.mypy_cache
+.pre-commit-config.yaml
+.ruff_cache
+Dockerfile
+kubernetes
+docker-compose.yaml
+junk/
+**/__pycache__
+*.pyc
