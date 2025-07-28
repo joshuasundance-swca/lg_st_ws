@@ -8,7 +8,9 @@ A **multi-user, real-time chat application** powered by FastAPI, Streamlit, WebS
 
 ## Features
 
-- **Multi-user chat rooms** (threads) with real-time updates via WebSockets.
+- **Multi-user chat rooms** (threads in LangGraph checkpoints) with real-time updates via WebSockets.
+- **Bi-directional websockets** for low-latency communication.
+  - **Broadcasting** to all users in a thread.
 - **AI assistant** in every thread (OpenAI GPT-4.1 by default).
   - **Passive participation**, speaking only when spoken to.
 - **Frontend**: Modern, interactive UI built with Streamlit.
@@ -36,4 +38,8 @@ This project serves as a practical example of integrating modern web technologie
 - The ease of use of **Streamlit** for creating interactive web UIs.
   - The novel use of multithreading in Streamlit solves many common issues with real-time updates in web applications.
 - The capabilities of **LangGraph** for orchestrating complex, persistent workflows with LLMs.
-- Because it's reminiscent of IRC, a classic protocol for real-time chat.
+
+And, more importantly, because it's
+* fun
+* reminiscent of IRC, a classic protocol for real-time chat
+* a better way to make better Streamlit apps with persistent, bi-directional websockets 😉
