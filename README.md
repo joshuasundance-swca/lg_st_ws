@@ -15,6 +15,8 @@ A **multi-user, real-time chat application** powered by FastAPI, Streamlit, WebS
   - **Passive participation**, speaking only when spoken to.
 - **Frontend**: Modern, interactive UI built with Streamlit.
   - **Multithreading** for real-time, bi-directional WebSocket communication.
+  - `st.fragment` for efficient UI updates that don't block the main thread.
+  - `st.session_state` used as a queue between the WebSocket thread and the Streamlit UI.
 - **Backend**: FastAPI server orchestrating WebSockets, chat history, and LLM interactions.
 - **Time zone support** for user-friendly timestamps.
 - **User presence** and system event notifications.
