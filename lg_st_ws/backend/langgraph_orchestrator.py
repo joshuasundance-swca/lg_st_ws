@@ -13,9 +13,9 @@ from lg_st_ws.backend.thread_manager import ThreadManager
 from lg_st_ws.common.models import (
     GraphState,
     MessageHistory,
-    serialize_history,
     ChatMessage,
 )
+from lg_st_ws.common.util import serialize_history
 
 
 class LangGraphOrchestrator:

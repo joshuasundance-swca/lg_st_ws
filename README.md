@@ -20,6 +20,7 @@ A **multi-user, real-time chat application** powered by FastAPI, Streamlit, WebS
 - **Backend**: FastAPI server orchestrating WebSockets, chat history, and LLM interactions.
 - **Time zone support** for user-friendly timestamps.
 - **User presence** and system event notifications.
+- **Streamlit websocket abstraction** for the benefit of other Streamlit devs <3
 
 ---
 
@@ -44,4 +45,4 @@ This project serves as a practical example of integrating modern web technologie
 And, more importantly, because it's
 * fun
 * reminiscent of IRC, a classic protocol for real-time chat
-* a better way to make better Streamlit apps with persistent, bi-directional websockets 😉
+* a way to make better Streamlit apps with persistent, bi-directional websockets 😉

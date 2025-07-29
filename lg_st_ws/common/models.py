@@ -1,3 +1,4 @@
+import json
 import datetime
 from enum import StrEnum
 from typing import Any, Annotated
@@ -8,11 +9,14 @@ from langchain_core.messages import (
     BaseMessage,
     messages_from_dict,
     message_to_dict,
-    messages_to_dict,
 )
 from langgraph.graph import add_messages
 from pydantic import BaseModel, Field
 from typing_extensions import TypedDict
+
+
+class GraphState(TypedDict):
+    messages: Annotated[list[HumanMessage | AIMessage | BaseMessage], add_messages]
 
 
 # --- Protocol enums ---
@@ -48,6 +52,10 @@ class JSONModel(BaseModel):
     def jsonable_dump(self, *args, **kwargs):
         """Return a JSON-serializable representation of the model."""
         return jsonable_encoder(self.model_dump(*args, **kwargs))
+
+    def jsonable_dump_json(self, *args, **kwargs) -> str:
+        """Return a JSON-serializable string representation of the model."""
+        return json.dumps(self.jsonable_dump(*args, **kwargs))
 
 
 class HandshakeMessage(JSONModel):
@@ -104,20 +112,3 @@ class ChatMessage(JSONModel):
 
     def to_lc_message(self) -> BaseMessage:
         return messages_from_dict([self.message])[0]
-
-
-# --- Utility functions ---
-
-
-def serialize_history(history: list[BaseMessage]) -> list[dict[str, Any]]:
-    """Serialize a list of LangChain messages to list of dicts."""
-    return messages_to_dict(history)
-
-
-def deserialize_history(serialized: list[dict[str, Any]]) -> list[BaseMessage]:
-    """Deserialize a list of dicts to LangChain message objects."""
-    return messages_from_dict(serialized)
-
-
-class GraphState(TypedDict):
-    messages: Annotated[list[HumanMessage | AIMessage | BaseMessage], add_messages]
