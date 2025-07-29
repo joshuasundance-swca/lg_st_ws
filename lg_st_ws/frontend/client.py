@@ -81,7 +81,8 @@ with st.sidebar:
         step=1,
     )
 
-    st.sidebar.button("Disconnect", disabled=not chat_active, on_click=reset_session)
+    if st.sidebar.button("Disconnect", disabled=not chat_active):
+        reset_session()
 
 
 local_tz = ZoneInfo(user_timezone)
