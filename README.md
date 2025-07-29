@@ -182,24 +182,18 @@ This object is an instance of [`websocket.WebSocketApp`](https://websocket-clien
 ##### 3. Use `.send()` to Transmit
 ```python
 def send_user_input(user_input: str):
-    from datetime import datetime, UTC
-    # Compose your message object
     user_message = HumanMessage(
         content=user_input,
         metadata={
             "username": st.session_state.username,
-            "timestamp": datetime.now(UTC).isoformat(),
+            "timestamp": datetime.datetime.now(datetime.UTC).isoformat(),
         },
     )
     chat_msg = ChatMessage.from_lc_message(
         thread_id=st.session_state.thread_id,
         msg=user_message,
     )
-    # Send JSON to the server
-    if st.session_state.ws_app is not None:
-        st.session_state.ws_app.send(chat_msg.jsonable_dump_json())
-    else:
-        st.warning("WebSocket connection not established. Please wait and try again.")
+    st.session_state.ws_app.send(chat_msg.jsonable_dump_json())
 ```
 
 **Reference**: See `send_user_input` in `./lg_st_ws/frontend/client.py` for a full example.
